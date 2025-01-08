@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MyController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -9,3 +10,9 @@ Route::get('/', function () {
 Route::get('/hello', function () {
     return "<h1>Hello world!</h1>";
 });
+
+Route::get('/mycontroller/{id?}', [MyController::class, 'myfunction']);
+Route::post('/mycontroller/{id?}', [MyController::class, 'myfunction']);
+
+Route::get('/mylab/{num1}/{num2}', [MyController::class, 'multiply']);
+Route::post('/mylab', [MyController::class, 'multiply']);
