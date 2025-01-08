@@ -14,5 +14,5 @@ Route::get('/hello', function () {
 Route::get('/mycontroller/{id?}', [MyController::class, 'myfunction']);
 Route::post('/mycontroller/{id?}', [MyController::class, 'myfunction']);
 
-Route::get('/mylab/{num1}/{num2}', [MyController::class, 'multiply']);
+Route::get('/mylab', [MyController::class, 'multiply']);
 Route::post('/mylab', [MyController::class, 'multiply']);
