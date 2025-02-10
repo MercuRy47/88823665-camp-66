@@ -69,7 +69,7 @@
               <div class="input-group-text"><span class="bi bi-envelope"></span></div>
             </div>
             {{-- <div class="input-group mb-3">
-              <input type="password" name="password" class="form-control" placeholder="Password" />
+              <input type="text" name="password" class="form-control" placeholder="Password" value="{{ $user->password }}"/>
               <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
             </div> --}}
             <!--begin::Row-->

@@ -37,7 +37,8 @@ Route::get('/error500', function (){
 Route::post('/register', [RegisterController::class, 'create']);
 
 Route::get('/users', [UserController::class, 'index']);
-Route::get('/user/{id}', [UserController::class, 'edit']);
+Route::get('/user/edit/{id}', [UserController::class, 'edit']);
 Route::put('/user', [UserController::class, 'edit_action']);
-Route::delete('/user/{id}', [UserController::class, 'destroy']);
+// Route::delete('/user/delete/{id}', [UserController::class, 'destroy']);
+Route::delete('/user/delete/{id}', [UserController::class, 'destroy']);
 

@@ -18,12 +18,12 @@
                 <td>{{  $user->name }}</td>
                 <td>{{  $user->email }}</td>
                 <td>
-                    <a href="{{ url('/user/' . $user->id) }}"><button class="btn btn-warning">Edit</button></a>
-                    <form action="{{ url('/user/' . $user->id) }}" method="post" style="display: inline">
+                    <a href="{{ url('/user/edit/' . $user->id) }}"><button class="btn btn-warning" onclick="confirmDeleteAlert()">Edit</button></a>
+                    <form id="delete-form" action="{{ url('/user/delete/' . $user->id) }}" method="post" style="display: inline">
                         @csrf
                         @method('DELETE')
                         <input type="hidden" name="id" value="{{ $user->id }}">
-                        <button type="submit" class="btn btn-danger">Delete</button
+                        <button type="submit" class="btn btn-danger" onclick="confirmDeleteAlert()">Delete</button
                     </form>
                 </td>
             </tr>
