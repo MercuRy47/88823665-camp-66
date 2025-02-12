@@ -19,11 +19,11 @@
                 <td>{{  $user->email }}</td>
                 <td>
                     <a href="{{ url('/user/edit/' . $user->id) }}"><button class="btn btn-warning" onclick="confirmDeleteAlert()">Edit</button></a>
-                    <form id="delete-form" action="{{ url('/user/delete/' . $user->id) }}" method="post" style="display: inline">
+                    <form id="delete-form" action="{{ url('/user/delete/' . $user->id) }}" method="post" style="display: inline" onclick="confirmDelete()">
                         @csrf
                         @method('DELETE')
                         <input type="hidden" name="id" value="{{ $user->id }}">
-                        <button type="submit" class="btn btn-danger" onclick="confirmDeleteAlert()">Delete</button
+                        <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </td>
             </tr>
