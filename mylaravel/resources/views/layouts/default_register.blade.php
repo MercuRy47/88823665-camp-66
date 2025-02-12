@@ -56,21 +56,25 @@
       <div class="card">
         <div class="card-body register-card-body">
           <p class="register-box-msg">Register a new membership</p>
-          <form action="{{  url('/register') }}" method="post" onsubmit="return true">
+          <form id="registerForm" action="{{  url('/register') }}" method="post" onsubmit="return true">
             @csrf
             <div class="input-group mb-3">
               <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" />
               <div class="input-group-text"><span class="bi bi-person"></span></div>
               <div class="valid-feedback">OK</div>
-              <div class="invalid-feedback" id="invalid-name">กรุณาระบุข้อมูล name</div>
+              <div class="invalid-feedback" id="invalid-name">Name</div>
             </div>
             <div class="input-group mb-3">
               <input type="email" name="email" id="email" class="form-control" placeholder="Email" />
               <div class="input-group-text"><span class="bi bi-envelope"></span></div>
+              <div class="valid-feedback">OK</div>
+              <div class="invalid-feedback" id="invalid-email">Email</div>
             </div>
             <div class="input-group mb-3">
               <input type="password" name="password" id="password" class="form-control" placeholder="Password" />
               <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
+              <div class="valid-feedback">OK</div>
+              <div class="invalid-feedback" id="invalid-password">Password</div>
             </div>
             <!--begin::Row-->
             <div class="row">
@@ -85,7 +89,7 @@
               <!-- /.col -->
               <div class="col-4">
                 <div class="d-grid gap-2">
-                  <button type="submit" class="btn btn-primary">Sign In</button>
+                  <button type="button" class="btn btn-primary" onclick="validateForm()">Sign In</button>
                 </div>
               </div>
               <!-- /.col -->
@@ -93,7 +97,8 @@
             <!--end::Row-->
           </form>
 
-          <button onclick="successAlert()">Click Me</button>
+          {{-- Test --}}
+          {{-- <button onclick="validateForm()">Click Me</button> --}}
 
           <div class="social-auth-links text-center mb-3 d-grid gap-2">
             <p>- OR -</p>
@@ -115,7 +120,6 @@
     <!-- /.register-box -->
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
     </script>
