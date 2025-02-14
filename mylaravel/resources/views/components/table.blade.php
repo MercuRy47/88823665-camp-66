@@ -1,3 +1,4 @@
+
 <div class="card mb-3">
     <div class="card-header"><h3 class="card-title">Users</h3></div>
     <!-- /.card-header -->
@@ -33,8 +34,7 @@
     </div>
     <!-- /.card-body -->
     {!! $users->links('pagination::bootstrap-5') !!}
-  </div>
-
+    </div>
 
 {{--
 

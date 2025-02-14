@@ -70,9 +70,15 @@
         <!--begin::App Content-->
         <div class="app-content">
           <!--begin::Container-->
-          <div class="mb-3 d-flex justify-content-center">
-              <a href="{{ url('/register') }}"><button class="btn btn-primary">Register</button></a>
+          <div class="mb-3 d-flex justify-content-center gap-5">
+            <div class="">
+                <a href="{{ url('/register') }}"><button class="btn btn-primary">Register</button></a>
+            </div>
+            <div class="">
+                <a href="{{ route('logout') }}"><button class="btn btn-danger">Logout</button></a>
+            </div>
           </div>
+          <h1>{{ session('user')->name }}</h1>
           @include('components.table')
           <!--end::Container-->
         </div>
